@@ -15,7 +15,7 @@
             
     }
     </pre>
-    <h3>Random server variables:</h3>
+    <h3>Random server variables, etc.:</h3>
     <pre>
 UNENCODED_URL: @Request.ServerVariables["UNENCODED_URL"]
 HTTP_URL: @Request.ServerVariables["HTTP_URL"]
@@ -23,6 +23,8 @@ REQUEST_URI: @Request.ServerVariables["REQUEST_URI"]
 X-FORWARDED-FOR: @Request.ServerVariables["X-FORWARDED-FOR"]
 X-FOO: @Request.ServerVariables["X-FOO"]
 HTTP_X_REWRITE_URL: @Request.ServerVariables["HTTP_X_REWRITE_URL"]
+Request.RawUrl: @Request.RawUrl
+Request.Url.ToString(): @Request.Url.ToString()
     </pre>
     <h3>Headers:</h3>
     <pre>
