@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <h3>Server variables:</h3>
+    <pre>
+    @for (int i = 0; i < Request.ServerVariables.Count; ++i)
+    {
+        @Request.ServerVariables.GetKey(i)<text>:</text> @(string.Join(", ", Request.ServerVariables.GetValues(i))) @Environment.NewLine
+            
+    }
+    </pre>
+    <h3>Random server variables:</h3>
+    <pre>
+UNENCODED_URL: @Request.ServerVariables["UNENCODED_URL"]
+HTTP_URL: @Request.ServerVariables["HTTP_URL"]
+REQUEST_URI: @Request.ServerVariables["REQUEST_URI"]
+X-FORWARDED-FOR: @Request.ServerVariables["X-FORWARDED-FOR"]
+X-FOO: @Request.ServerVariables["X-FOO"]
+HTTP_X_REWRITE_URL: @Request.ServerVariables["HTTP_X_REWRITE_URL"]
+    </pre>
+    <h3>Headers:</h3>
+    <pre>
+    @for (int i = 0; i < Request.Headers.Count; ++i)
+    {
+        @Request.Headers.GetKey(i)<text>:</text> @(string.Join(", ", Request.Headers.GetValues(i))) @Environment.NewLine
+    }
+    </pre>
+</body>
+</html>
